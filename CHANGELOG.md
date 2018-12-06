@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-## 2.1.0 - TBC
+## 2.1.0 - 2018-12-06
 
   - Initial release for Ansible 2.6 or higher
   - Support both Ubuntu 16.04/18.04 and RHEL/CentOS 7
