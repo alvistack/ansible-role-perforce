@@ -14,19 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_key: [
-  { state: "present", key: "https://package.perforce.com/perforce.pubkey" },
-]
-_yum_repository: [
-  {
-    file: "perforce",
-    name: "perforce",
-    description: "Perforce",
-    baseurl: "http://package.perforce.com/yum/rhel/$releasever/x86_64",
-    gpgcheck: true,
-    enabled: true,
-  },
-]
-_yum: [
-  { state: "latest", name: "helix-cli" },
-]
+- hosts: all
+  remote_user: root
+  roles:
+    - role: perforce
+
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: su -l -s /bin/bash -c 'p4 -V'
+      command: su -l -s /bin/bash -c 'p4 -V'
+      args:
+        warn: false
+      register: result
+      changed_when: result is not succeeded
