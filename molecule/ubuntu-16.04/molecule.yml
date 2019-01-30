@@ -14,19 +14,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_key: [
-  { state: "present", key: "https://package.perforce.com/perforce.pubkey" },
-]
-_yum_repository: [
-  {
-    file: "perforce",
-    name: "perforce",
-    description: "Perforce",
-    baseurl: "http://package.perforce.com/yum/rhel/$releasever/x86_64",
-    gpgcheck: true,
-    enabled: true,
-  },
-]
-_yum: [
-  { state: "latest", name: "helix-cli" },
-]
+scenario:
+  name: ubuntu-16.04
+driver:
+  name: lxd
+platforms:
+  - name: ${LXC_ID}-1
+    url: unix:/var/snap/lxd/common/lxd/unix.socket
+    source:
+      server: https://images.linuxcontainers.org
+      alias: ubuntu/xenial/amd64
+lint:
+  name: yamllint
+dependency:
+  name: galaxy
+  options:
+    role-file: ansible-role-requirements.yml
+    roles-path: ${ANSIBLE_ROLES_PATH}
+    ignore-errors: true
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_ROLES_PATH: ${ANSIBLE_ROLES_PATH}
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

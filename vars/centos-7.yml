@@ -23,8 +23,8 @@ _yum_repository: [
     name: "perforce",
     description: "Perforce",
     baseurl: "http://package.perforce.com/yum/rhel/$releasever/x86_64",
-    gpgcheck: "yes",
-    enabled: "yes",
+    gpgcheck: true,
+    enabled: true,
   },
 ]
 _yum: [
