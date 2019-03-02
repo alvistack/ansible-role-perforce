@@ -14,18 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- hosts: all
-  remote_user: root
-  roles:
-    - role: bootstrap
-    - role: perforce
-
-- hosts: all
-  remote_user: root
-  tasks:
-    - name: su -l -s /bin/bash -c 'p4 -V'
-      command: su -l -s /bin/bash -c 'p4 -V'
-      args:
-        warn: false
-      register: result
-      changed_when: result is not succeeded
+- name: bootstrap
+  src: https://github.com/alvistack/ansible-role-bootstrap
+  version: develop
