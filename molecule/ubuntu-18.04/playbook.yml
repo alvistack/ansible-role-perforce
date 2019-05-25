@@ -16,11 +16,13 @@
 
 - hosts: all
   remote_user: root
+  become: true
   roles:
     - role: perforce
 
 - hosts: all
   remote_user: root
+  become: true
   tasks:
     - name: su -l -s /bin/bash -c 'p4 -V'
       command: su -l -s /bin/bash -c 'p4 -V'
