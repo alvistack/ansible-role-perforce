@@ -37,6 +37,8 @@
     name: "{{ item.name }}"
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
+    auto_import_keys: true
+    autorefresh: true
   with_items: "{{ _zypper_repository }}"
   tags: perforce
 
