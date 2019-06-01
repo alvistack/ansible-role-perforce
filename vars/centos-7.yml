@@ -25,6 +25,7 @@ _yum_repository: [
     baseurl: "http://package.perforce.com/yum/rhel/$releasever/x86_64",
     gpgcheck: true,
     enabled: true,
+    state: "present",
   },
 ]
 _yum: [
