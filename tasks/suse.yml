@@ -27,7 +27,7 @@
     key: "{{ item.key }}"
     state: "{{ item.state }}"
     validate_certs: false
-  with_items: "{{ _rpm_key }}"
+  loop: "{{ _rpm_key }}"
   register: result
   until: result is succeeded
   tags: perforce
@@ -40,7 +40,7 @@
     disable_gpg_check: true
     auto_import_keys: true
     autorefresh: true
-  with_items: "{{ _zypper_repository }}"
+  loop: "{{ _zypper_repository }}"
   tags: perforce
 
 - name: zypper install
@@ -48,7 +48,7 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
     disable_gpg_check: true
-  with_items: "{{ _zypper }}"
+  loop: "{{ _zypper }}"
   register: result
   until: result is succeeded
   tags: perforce
