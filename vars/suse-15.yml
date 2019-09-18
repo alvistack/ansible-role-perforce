@@ -14,16 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_key: [
-  { state: "present", key: "https://package.perforce.com/perforce.pubkey" },
-]
-_zypper_repository: [
-  {
-    name: "helix",
-    repo: "http://package.perforce.com/yum/rhel/7/x86_64/",
-    state: "present",
-  },
-]
-_zypper: [
-  { state: "latest", name: "helix-cli" },
-]
+_rpm_key:
+  - { state: "present", key: "https://package.perforce.com/perforce.pubkey" }
+
+_zypper_repository:
+  - name: "helix"
+    repo: "http://package.perforce.com/yum/rhel/7/x86_64/"
+    state: "present"
+
+_zypper:
+  - { state: "latest", name: "helix-cli" }
