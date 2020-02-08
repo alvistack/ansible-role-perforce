@@ -18,6 +18,7 @@
   remote_user: root
   become: true
   roles:
+    - role: python
     - role: perforce
 
 - hosts: all
