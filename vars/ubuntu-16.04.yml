@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _apt_key:
-  - { state: "present", id: "0FF18869", url: "https://package.perforce.com/perforce.pubkey" }
+  - { state: "present", url: "https://package.perforce.com/perforce.pubkey" }
 
 _apt_repository:
   - { state: "present", repo: "deb http://package.perforce.com/apt/ubuntu xenial release" }
