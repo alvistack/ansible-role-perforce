@@ -14,9 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- hosts: all
-  remote_user: root
-  become: true
-  roles:
-    - role: python
-    - role: perforce
+_apt_key:
+  - { state: "present", url: "https://package.perforce.com/perforce.pubkey" }
+
+_apt_repository:
+  - { state: "present", repo: "deb http://package.perforce.com/apt/ubuntu bionic release" }
+
+_apt:
+  - { state: "latest", name: "helix-cli" }
