@@ -14,8 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_key: []
+_rpm_key:
+  - key: "https://package.perforce.com/perforce.pubkey"
+    fingerprint: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
+    state: "present"
 
-_yum_repository: []
+_yum_repository:
+  - file: "perforce"
+    name: "perforce"
+    description: "Perforce"
+    baseurl: "http://package.perforce.com/yum/rhel/7/x86_64"
+    gpgcheck: true
+    enabled: true
+    state: "present"
 
-_yum: []
+_yum:
+  - { state: "latest", name: "helix-cli" }
