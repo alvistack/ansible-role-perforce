@@ -14,26 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  role_name: perforce
-  author: "Wong Hoi Sing Edison <hswong3i@pantarei-design.com>"
-  description: Ansible Role for Perforce Installation
-  company: PantaRei Design
-  license: Apache-2.0
-  min_ansible_version: 2.9
-  platforms:
-    - name: Ubuntu
-      versions:
-        - focal
-        - eoan
-        - bionic
-    - name: EL
-      versions:
-        - 8
-        - 7
-    - name: opensuse
-      versions:
-        - all
-  galaxy_tags:
-    - system
-dependencies: []
+_apt_key:
+  - url: "https://package.perforce.com/perforce.pubkey"
+    id: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
+    state: "present"
+
+_apt_repository:
+  - repo: "deb http://package.perforce.com/apt/ubuntu bionic release"
+    state: "present"
+
+_apt:
+  - { state: "latest", name: "helix-cli" }

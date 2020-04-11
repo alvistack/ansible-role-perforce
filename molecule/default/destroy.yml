@@ -14,14 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_key:
-  - url: "https://package.perforce.com/perforce.pubkey"
-    id: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
-    state: "present"
-
-_apt_repository:
-  - repo: "deb http://package.perforce.com/apt/ubuntu xenial release"
-    state: "present"
-
-_apt:
-  - { state: "latest", name: "helix-cli" }
+- hosts: localhost
+  connection: local
+  remote_user: root
+  become: true
+  gather_facts: false
+  tasks:
+    - name: docker rm
+      docker_container:
+        name: "{{ item.name }}"
+        state: "absent"
+      loop_control:
+        label: "{{ item.name }}"
+      loop: "{{ molecule_yml.platforms }}"
