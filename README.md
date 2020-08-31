@@ -1,7 +1,7 @@
 # Ansible Role for Perforce
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-perforce.svg)](https://travis-ci.com/alvistack/ansible-role-perforce)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-perforce.svg)](https://github.com/alvistack/ansible-role-perforce)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-perforce.svg)](https://github.com/alvistack/ansible-role-perforce/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-perforce.svg)](https://github.com/alvistack/ansible-role-perforce/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.perforce-blue.svg)](https://galaxy.ansible.com/alvistack/perforce)
 
