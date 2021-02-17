@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _rpm_key:
-  - key: "https://package.perforce.com/perforce.pubkey"
+  - key: "http://package.perforce.com/perforce.pubkey"
     fingerprint: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
     state: "present"
 
@@ -27,7 +27,7 @@ _yum_repository:
     priority: "2"
     enabled: true
     gpgcheck: true
-    gpgkey: "https://package.perforce.com/perforce.pubkey"
+    gpgkey: "http://package.perforce.com/perforce.pubkey"
     state: "present"
 
 _yum:
