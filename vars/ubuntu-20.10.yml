@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _apt_key:
-  - url: "https://package.perforce.com/perforce.pubkey"
+  - url: "http://package.perforce.com/perforce.pubkey"
     id: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
     state: "present"
 
