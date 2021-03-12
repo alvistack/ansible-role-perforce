@@ -16,7 +16,7 @@
 
 _zypper_repository:
   - name: "helix"
-    repo: "http://package.perforce.com/yum/rhel/7/x86_64/"
+    repo: "http://package.perforce.com/yum/rhel/7/x86_64"
     state: "present"
 
 _zypper:
