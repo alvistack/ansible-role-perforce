@@ -20,7 +20,7 @@ _apt_key:
     state: "present"
 
 _apt_repository:
-  - repo: "deb http://package.perforce.com/apt/ubuntu bionic release"
+  - repo: "deb http://package.perforce.com/apt/ubuntu focal release"
     state: "present"
 
 _apt:
