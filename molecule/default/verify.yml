@@ -20,7 +20,7 @@
   tasks:
     - name: p4 -V
       shell: |
-        set -euo pipefail
+        set -euxo pipefail
         p4 -V
       args:
         executable: "/bin/bash"
