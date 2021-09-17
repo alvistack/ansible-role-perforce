@@ -25,6 +25,7 @@ _yum_repository:
     description: "Perforce"
     baseurl: "http://package.perforce.com/yum/rhel/7/x86_64"
     priority: "2"
+    module_hotfixes: true
     enabled: true
     gpgcheck: true
     gpgkey: "http://package.perforce.com/perforce.pubkey"
