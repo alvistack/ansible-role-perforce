@@ -15,12 +15,14 @@
 # limitations under the License.
 
 _apt_key:
-  - url: "http://package.perforce.com/perforce.pubkey"
+  - keyring: "/etc/apt/trusted.gpg.d/perforce.gpg"
+    url: "http://package.perforce.com/perforce.pubkey"
     id: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
     state: "present"
 
 _apt_repository:
-  - repo: "deb http://package.perforce.com/apt/ubuntu focal release"
+  - filename: "perforce"
+    repo: "deb http://package.perforce.com/apt/ubuntu focal release"
     state: "present"
 
 _apt:

@@ -22,11 +22,11 @@ _rpm_key:
 _yum_repository:
   - file: "perforce"
     name: "perforce"
-    description: "Perforce"
+    description: "perforce"
     baseurl: "http://package.perforce.com/yum/rhel/7/x86_64"
+    enabled: true
     priority: "2"
     module_hotfixes: true
-    enabled: true
     gpgcheck: true
     gpgkey: "http://package.perforce.com/perforce.pubkey"
     state: "present"
