@@ -19,7 +19,7 @@
   become: true
   tasks:
     - name: p4 -V
-      shell: |
+      ansible.builtin.shell: |
         set -euxo pipefail
         p4 -V
       args:
