@@ -14,16 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt_key:
-  - keyring: "/etc/apt/trusted.gpg.d/perforce.gpg"
-    url: "http://package.perforce.com/perforce.pubkey"
-    id: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
+_rpm_key:
+  - key: "http://package.perforce.com/perforce.pubkey"
+    fingerprint: "E58131C0AEA7B082C6DC4C937123CB760FF18869"
     state: "present"
 
-_apt_repository:
-  - filename: "perforce"
-    repo: "deb http://package.perforce.com/apt/ubuntu bionic release"
+_yum_repository:
+  - file: "perforce"
+    name: "perforce"
+    description: "perforce"
+    baseurl: "http://package.perforce.com/yum/rhel/7/x86_64"
+    enabled: true
+    priority: "2"
+    module_hotfixes: true
+    gpgcheck: true
+    gpgkey: "http://package.perforce.com/perforce.pubkey"
     state: "present"
 
-_apt:
+_zypper:
   - { state: "latest", name: "helix-cli" }
