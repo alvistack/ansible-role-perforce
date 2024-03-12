@@ -1,5 +1,4 @@
 ---
-
 # Copyright 2024 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,6 +24,6 @@
           set -euxo pipefail
           p4 -V
       args:
-        executable: "/bin/bash"
+        executable: /bin/bash
       register: result
       changed_when: result is not succeeded
