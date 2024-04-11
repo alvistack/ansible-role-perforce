@@ -22,7 +22,7 @@ _apt_key:
 
 _apt_repository:
   - filename: perforce
-    repo: deb http://package.perforce.com/apt/ubuntu bionic release
+    repo: deb http://package.perforce.com/apt/ubuntu jammy release
     state: present
 
 _apt:
