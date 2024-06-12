@@ -23,7 +23,7 @@ _yum_repository:
   - file: perforce
     name: perforce
     description: perforce
-    baseurl: http://package.perforce.com/yum/rhel/9/x86_64
+    baseurl: http://package.perforce.com/yum/rhel/7/x86_64
     enabled: true
     priority: "2"
     module_hotfixes: true
@@ -31,5 +31,5 @@ _yum_repository:
     gpgkey: http://package.perforce.com/perforce.pubkey
     state: present
 
-_yum:
+_zypper:
   - { state: latest, name: helix-cli }
