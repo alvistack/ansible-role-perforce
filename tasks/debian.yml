@@ -28,6 +28,11 @@
   register: result
   until: result is succeeded
 
+- name: apt-get update
+  ansible.builtin.apt:
+    update_cache: true
+  changed_when: false
+
 - name: apt-get install
   ansible.builtin.apt:
     name: "{{ item.name }}"
