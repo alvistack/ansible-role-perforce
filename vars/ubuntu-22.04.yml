@@ -14,13 +14,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_apt_key:
+  - url: http://package.perforce.com/perforce.pubkey
+    dest: /etc/apt/keyrings/perforce.asc
+    checksum: "sha256:d2b7b3cf82605d7b7ac3b5f74a5dac8587467bfdcf1f446cdb8531f25636e933"
+
 _deb822_repository:
   - name: perforce
     types: deb
     uris: http://package.perforce.com/apt/ubuntu
     suites: jammy
     components: release
-    signed_by: http://package.perforce.com/perforce.pubkey
+    signed_by: /etc/apt/keyrings/perforce.asc
     enabled: true
     state: present
 
