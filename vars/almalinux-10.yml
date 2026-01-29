@@ -23,7 +23,7 @@ _yum_repository:
   - file: perforce
     name: perforce
     description: perforce
-    baseurl: http://package.perforce.com/yum/rhel/10/x86_64
+    baseurl: http://package.perforce.com/yum/rhel/9/x86_64
     enabled: true
     priority: "2"
     module_hotfixes: true
