@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _rpm_key:
-  - key: https://package.perforce.com/perforce.pubkey
+  - key: http://package.perforce.com/perforce.pubkey
     fingerprint: E58131C0AEA7B082C6DC4C937123CB760FF18869
     state: present
 
@@ -23,13 +23,13 @@ _yum_repository:
   - file: perforce
     name: perforce
     description: perforce
-    baseurl: https://package.perforce.com/yum/rhel/10/x86_64
+    baseurl: http://package.perforce.com/yum/rhel/9/x86_64
     enabled: true
     priority: "2"
     module_hotfixes: true
     gpgcheck: true
-    gpgkey: https://package.perforce.com/perforce.pubkey
+    gpgkey: http://package.perforce.com/perforce.pubkey
     state: present
 
-_zypper:
+_yum:
   - { state: latest, name: helix-cli }
