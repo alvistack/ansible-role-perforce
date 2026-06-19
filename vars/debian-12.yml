@@ -17,7 +17,7 @@
 _apt_key:
   - url: http://package.perforce.com/perforce.pubkey
     dest: /etc/apt/keyrings/perforce.asc
-    checksum: "sha256:d2b7b3cf82605d7b7ac3b5f74a5dac8587467bfdcf1f446cdb8531f25636e933"
+    checksum: "sha256:514c4c68f8860028e8406c066b88af6d0d8661b381cf2c150498efc8842a32bf"
 
 _deb822_repository:
   - name: perforce
